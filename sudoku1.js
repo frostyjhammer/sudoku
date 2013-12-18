@@ -13,13 +13,13 @@ function doKeyDown(event) {
   var row = rowNo(cell);
   var col = colNo(cell);
   switch (event.keyCode) {
-    case 8:  event.preventDefault(); $('#'+focusedCell).text(''); putGoodNumber(0); break; // backspace
-    case 46: event.preventDefault(); $('#'+focusedCell).text(''); putGoodNumber(0); break; // delete
-    case 37: col -= 1; if (col < 0) col = 8; doFocusRC(row,col); break;                    // left-arrow
-    case 38: row -= 1; if (row < 0) row = 8; doFocusRC(row,col); break;                    // up-arrow
-    case 39: col += 1; if (col > 8) col = 0; doFocusRC(row,col); break;                    // right-arrow
-    case 40: row += 1; if (row > 8) row = 0; doFocusRC(row,col); break;                    // down-arrow
-    case 67: doSolveCell();                                                                // 'C'ell
+    case 8:  event.preventDefault(); doClearCell(); break;               // backspace
+    case 46: event.preventDefault(); doClearCell(); break;               // delete
+    case 37: col -= 1; if (col < 0) col = 8; doFocusRC(row,col); break;  // left-arrow
+    case 38: row -= 1; if (row < 0) row = 8; doFocusRC(row,col); break;  // up-arrow
+    case 39: col += 1; if (col > 8) col = 0; doFocusRC(row,col); break;  // right-arrow
+    case 40: row += 1; if (row > 8) row = 0; doFocusRC(row,col); break;  // down-arrow
+    case 67: doSolveCell();                                              // 'C'ell
     default: 
       if (event.keyCode >= 48 && event.keyCode <= 57) {
         doNumber(event.keyCode - 48);
@@ -31,7 +31,12 @@ function doKeyDown(event) {
       }
   }
 }
+function doClearCell() {
+  $('#'+focusedCell).text('')
+  $('#'+focusedCell).removeClass('locked')
+}
 function doNumber(n) {
+  if ($('#'+focusedCell).hasClass('locked')) return false;
   if (badNumberHint) { tryNumber(n) } else { putGoodNumber(n) }
 }
 function tryNumber(n) {
@@ -129,8 +134,10 @@ function doTextSize(size) {
 function doReset() {
   var cells = $('.cell');
   cells.removeClass('warning');
+//$.each($('.cell'), function(i, cell){
+//  if (!$('#'+i).hasClass('locked')) { $('#'+i).text('') }
+//});
   cells.text('');
-  focusedCell = 0;
   doFocusCell(focusedCell);
 }
 function doPrint() {
@@ -159,4 +166,12 @@ function testNumber(n) {
     if (parseInt(cell.innerText) == n) { goodNumber = false; return false }
   });
   return goodNumber;
+}
+function doLock() {
+  var cell;
+  for (i=0; i<=80; i++) {
+    cell = document.getElementById(i);
+    if (parseInt(cell.innerText) >= 1) { $('#'+i).addClass('locked') }
+  }
+  doFocusCell(focusedCell);
 }
