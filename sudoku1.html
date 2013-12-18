@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <title>Suduko1</title>
+    <link rel="stylesheet" type="text/css" href="sudoku1.css" media="screen">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="sudoku1.js"></script>
+  </head>
+  <body>
+    <table id="container" class="big-box" tabindex=0>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td id="0"  tabindex="0"  class="cell box0 row0 col0"></td>
+              <td id="1"  tabindex="1"  class="cell box0 row0 col1"></td>
+              <td id="2"  tabindex="2"  class="cell box0 row0 col2"></td>
+            </tr>
+            <tr>
+              <td id="9"  tabindex="9"  class="cell box0 row1 col0"></td>
+              <td id="10" tabindex="10" class="cell box0 row1 col1"></td>
+              <td id="11" tabindex="11" class="cell box0 row1 col2"></td>
+            </tr>
+            <tr>
+              <td id="18" tabindex="18" class="cell box0 row2 col0"></td>
+              <td id="19" tabindex="19" class="cell box0 row2 col1"></td>
+              <td id="20" tabindex="20" class="cell box0 row2 col2"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td id="3"  tabindex="3"  class="cell box1 row0 col3"></td>
+              <td id="4"  tabindex="4"  class="cell box1 row0 col4"></td>
+              <td id="5"  tabindex="5"  class="cell box1 row0 col5"></td>
+            </tr>
+            <tr>
+              <td id="12" tabindex="12" class="cell box1 row1 col3"></td>
+              <td id="13" tabindex="13" class="cell box1 row1 col4"></td>
+              <td id="14" tabindex="14" class="cell box1 row1 col5"></td>
+            </tr>
+            <tr>
+              <td id="21" tabindex="21" class="cell box1 row2 col3"></td>
+              <td id="22" tabindex="22" class="cell box1 row2 col4"></td>
+              <td id="23" tabindex="23" class="cell box1 row2 col5"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td id="6"  tabindex="6"  class="cell box2 row0 col6"></td>
+              <td id="7"  tabindex="7"  class="cell box2 row0 col7"></td>
+              <td id="8"  tabindex="8"  class="cell box2 row0 col8"></td>
+            </tr>
+            <tr>
+              <td id="15" tabindex="15" class="cell box2 row1 col6"></td>
+              <td id="16" tabindex="16" class="cell box2 row1 col7"></td>
+              <td id="17" tabindex="17" class="cell box2 row1 col8"></td>
+            </tr>
+            <tr>
+              <td id="24" tabindex="24" class="cell box2 row2 col6"></td>
+              <td id="25" tabindex="25" class="cell box2 row2 col7"></td>
+              <td id="26" tabindex="26" class="cell box2 row2 col8"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td id="27" tabindex="27" class="cell box3 row3 col0"></td>
+              <td id="28" tabindex="28" class="cell box3 row3 col1"></td>
+              <td id="29" tabindex="29" class="cell box3 row3 col2"></td>
+            </tr>
+            <tr>
+              <td id="36" tabindex="36" class="cell box3 row4 col0"></td>
+              <td id="37" tabindex="37" class="cell box3 row4 col1"></td>
+              <td id="38" tabindex="38" class="cell box3 row4 col2"></td>
+            </tr>
+            <tr>
+              <td id="45" tabindex="45" class="cell box3 row5 col0"></td>
+              <td id="46" tabindex="46" class="cell box3 row5 col1"></td>
+              <td id="47" tabindex="47" class="cell box3 row5 col2"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td id="30" tabindex="30" class="cell box4 row3 col3"></td>
+              <td id="31" tabindex="31" class="cell box4 row3 col4"></td>
+              <td id="32" tabindex="32" class="cell box4 row3 col5"></td>
+            </tr>
+            <tr>
+              <td id="39" tabindex="39" class="cell box4 row4 col3"></td>
+              <td id="40" tabindex="40" class="cell box4 row4 col4"></td>
+              <td id="41" tabindex="41" class="cell box4 row4 col5"></td>
+            </tr>
+            <tr>
+              <td id="48" tabindex="48" class="cell box4 row5 col3"></td>
+              <td id="49" tabindex="49" class="cell box4 row5 col4"></td>
+              <td id="50" tabindex="50" class="cell box4 row5 col5"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td id="33" tabindex="33" class="cell box5 row3 col6"></td>
+              <td id="34" tabindex="34" class="cell box5 row3 col7"></td>
+              <td id="35" tabindex="35" class="cell box5 row3 col8"></td>
+            </tr>
+            <tr>
+              <td id="42" tabindex="42" class="cell box5 row4 col6"></td>
+              <td id="43" tabindex="43" class="cell box5 row4 col7"></td>
+              <td id="44" tabindex="44" class="cell box5 row4 col8"></td>
+            </tr>
+            <tr>
+              <td id="51" tabindex="51" class="cell box5 row5 col6"></td>
+              <td id="52" tabindex="52" class="cell box5 row5 col7"></td>
+              <td id="53" tabindex="53" class="cell box5 row5 col8"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td id="54" tabindex="54" class="cell box6 row6 col0"></td>
+              <td id="55" tabindex="55" class="cell box6 row6 col1"></td>
+              <td id="56" tabindex="56" class="cell box6 row6 col2"></td>
+            </tr>
+            <tr>
+              <td id="63" tabindex="63" class="cell box6 row7 col0"></td>
+              <td id="64" tabindex="64" class="cell box6 row7 col1"></td>
+              <td id="65" tabindex="65" class="cell box6 row7 col2"></td>
+            </tr>
+            <tr>
+              <td id="72" tabindex="72" class="cell box6 row8 col0"></td>
+              <td id="73" tabindex="73" class="cell box6 row8 col1"></td>
+              <td id="74" tabindex="74" class="cell box6 row8 col2"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td id="57" tabindex="57" class="cell box7 row6 col3"></td>
+              <td id="58" tabindex="58" class="cell box7 row6 col4"></td>
+              <td id="59" tabindex="59" class="cell box7 row6 col5"></td>
+            </tr>
+            <tr>
+              <td id="66" tabindex="66" class="cell box7 row7 col3"></td>
+              <td id="67" tabindex="67" class="cell box7 row7 col4"></td>
+              <td id="68" tabindex="68" class="cell box7 row7 col5"></td>
+            </tr>
+            <tr>
+              <td id="75" tabindex="75" class="cell box7 row8 col3"></td>
+              <td id="76" tabindex="76" class="cell box7 row8 col4"></td>
+              <td id="77" tabindex="77" class="cell box7 row8 col5"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td id="60" tabindex="60" class="cell box8 row6 col6"></td>
+              <td id="61" tabindex="61" class="cell box8 row6 col7"></td>
+              <td id="62" tabindex="62" class="cell box8 row6 col8"></td>
+            </tr>
+            <tr>
+              <td id="69" tabindex="69" class="cell box8 row7 col6"></td>
+              <td id="70" tabindex="70" class="cell box8 row7 col7"></td>
+              <td id="71" tabindex="71" class="cell box8 row7 col8"></td>
+            </tr>
+            <tr>
+              <td id="78" tabindex="78" class="cell box8 row8 col6"></td>
+              <td id="79" tabindex="79" class="cell box8 row8 col7"></td>
+              <td id="80" tabindex="60" class="cell box8 row8 col8"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+  <td>
+    <table>
+      <tr>
+        <td>
+          <img class="no-print" src="BigBlueA-20px.png" onClick="doTextSize('sml')" alt="Click for Small"  width="20" height="20">
+          <img class="no-print"src="BigBlueA-24px.png" onClick="doTextSize('med')" alt="Click for Medium" width="24" height="24">
+          <img class="no-print"src="BigBlueA-30px.png" onClick="doTextSize('lrg')" alt="Click for Large"  width="30" height="30">
+        </td>
+        <td class="button no-print"><a href="#" onClick="doReset()"> Reset </a></td>
+        <td class="button no-print"><a href="#" onClick="doLock()">  Lock  </a></td>
+        <td class="button no-print"><a href="#" onClick="doPrint()"> Print </a></td>
+        <!--td class="button no-print"><a href="#" onClick="doTest1()"> Test1 </a></td-->
+        <td class="button no-print"><a href="#" onClick="doTest2()"> Test2 </a></td>
+      </tr>
+    </table>
+  </body>
+</html>
