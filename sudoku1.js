@@ -155,6 +155,7 @@ function doPrint() {
 function doSolveCell() {
   var cell = document.getElementById(focusedCell);
   if ($('#'+cell.id).hasClass('locked')) {return false}
+  if (cell.innerText != '') {return false}
   var n;
   var arr = new Array;
   for (i=1; i<=9; i++) { if (testNumber(i)) arr.push(i) }
